@@ -97,3 +97,18 @@ The generated .h file will now have
 #define NUMBER 259
 typedef union {int ival; double dval;} YYSTYPE;
 extern YYSTYPE yylval;
+	
+Regular expressions
+Many Unix utilities have regular expressions of some sort, but unfortunately they don’t all have the same power. Here are the basics:
+. Match any character except newlines. \n A newline character.
+3
+\t A tab character.
+ˆ The beginning of the line.
+$ The end of the line.
+<expr>* Zero or more occurences of the expression. <expr>+ One or more occurences of the expression. (<expr1>|<expr2>) One expression of another. [<set>] A set of character or ranges, such as [a-zA-Z]. [ˆ<set>] The complement of the set, for instance [ˆ \t].
+
+	If the lex program is to be used on its own, this section will contain a main program. If you leave this section empty you will get the default main:
+int main() {
+yylex();
+return 0; }
+where yylex is the parser that is built from the rules.
