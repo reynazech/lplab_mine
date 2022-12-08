@@ -1,4 +1,26 @@
 # lplab_mine
+
+#command instructions in yacc
+
+Method 1
+lex pgm.l>pgm.c
+gcc pgm.c -o outputfilename
+./outputfilename [command line args] 		//[] indicates optional
+
+Method 2:
+
+lex pgm.l
+gcc lex.yy.c -o outputfilename
+./outputfilename [command line args]            //[] indicates optional
+
+If output file name is not provided, the default output file is named a.out
+
+Compiling Yacc programs
+
+yacc -d <file.y>
+lex <file.l>
+gcc lex.yy.c y.tab.c -ll -o <output>
+./output
 Viva questions and programs to ace language processing lab exams at cusat
 What is yacc?
 
